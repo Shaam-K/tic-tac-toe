@@ -1,0 +1,54 @@
+body {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    place-content: center;
+}
+.header {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 200%;
+
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+
+#board {
+    width: 45vw;
+    height: 75vh;
+    background-color: bisque;
+    display: grid;
+    grid-template-columns: 15vw 15vw 15vw;
+    grid-template-rows: 25vh 25vh 25vh;
+}
+
+.box {
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.box.taken {
+    pointer-events: none;
+}
+
+.bottom {
+    display: flex;
+}
+
+@media only screen and (max-width: 1100px) {
+    #board {
+        width: 90vw;
+        height: 45vh;
+        grid-template-columns: 30vw 30vw 30vw;
+        grid-template-rows: 15vh 15vh 15vh;
+    }
+}
