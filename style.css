@@ -4,35 +4,44 @@ body {
     width: 100vw;
     place-content: center;
 }
-.header {
-    display: grid;
-    grid-template-columns: auto auto;
-    width: 200%;
 
+.merge {
+    display: flex;
+    column-gap: 1vw;
 }
+
 
 .main {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+    display: grid;
+    place-items: center;
+    text-align: center;
 }
+
+.score {
+    border: 2px solid black;
+    height:fit-content;
+    padding: 30px;
+    min-width: 15vw;
+}
+
 
 
 #board {
     width: 45vw;
     height: 75vh;
-    background-color: bisque;
     display: grid;
     grid-template-columns: 15vw 15vw 15vw;
     grid-template-rows: 25vh 25vh 25vh;
 }
 
 .box {
+    background-color: bisque;
     border: 1px solid black;
+    border-radius: 7px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 3em;
     cursor: pointer;
 }
 
@@ -40,11 +49,11 @@ body {
     pointer-events: none;
 }
 
-.bottom {
-    display: flex;
-}
-
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 900px) {
+    .merge {
+        flex-direction: column-reverse;
+        row-gap: 2rem;
+    }
     #board {
         width: 90vw;
         height: 45vh;

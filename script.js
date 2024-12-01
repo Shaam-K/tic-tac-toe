@@ -1,6 +1,6 @@
 const modal = document.getElementById('init_dialog');
-const open_modal = document.getElementById('open_dig');
-const close_modal = document.getElementById('close_dig');
+// const open_modal = document.getElementById('open_dig');
+// const close_modal = document.getElementById('close_dig');
 const board = document.getElementById('board');
 const turn_message = document.getElementById('turn');
 const win_message = document.getElementById('win_message');
@@ -8,16 +8,13 @@ const score_sheet = document.getElementById('score_sheet');
 
 const mod_form = document.forms['init_form']
 
-open_modal.addEventListener('click', () => {
-    modal.showModal();
-})
-
-close_modal.addEventListener('click', () => {
-    const user1 = mod_form['user1'].value
-    const user2 = mod_form['user2'].value
-    const symbol1 = mod_form['symbol1'].value
-    const symbol2 = mod_form['symbol2'].value
-})
+// close_modal.addEventListener('click', () => {
+//     const user1 = mod_form['user1'].value
+//     const user2 = mod_form['user2'].value
+//     const symbol1 = mod_form['symbol1'].value
+//     const symbol2 = mod_form['symbol2'].value
+//     console.log(user1, user2, symbol1, symbol2)
+// })
 
 
 function createUser(username, symbol) {
@@ -58,8 +55,8 @@ function reset() {
         ['', '', ''],
         ['', '', '']
     ]
-    turn_message.innerHTML = "";
-    win_message.innerHTML = "";
+    turn_message.innerHTML = "--";
+    win_message.innerHTML = "--";
     gamePlay();
 }
 
@@ -83,11 +80,6 @@ function gamePlay() {
     <h3>${global_state.u2.username}: ${global_state.u2.score}</h3>
     `
     board.addEventListener('click', (e) => {
-        if (global_state.turn == 1) {
-            turn_message.innerHTML = `${global_state.u1.username}'s Turn`
-        } else {
-            turn_message.innerHTML = `${global_state.u2.username}'s Turn`
-        }   
         const cell = e.target;
         const x = cell.dataset.x;
         const y = cell.dataset.y;
@@ -111,6 +103,7 @@ function gamePlay() {
                         <h3>${global_state.u2.username}: ${global_state.u2.score}</h3>
                         `
                     } else {
+                        turn_message.innerHTML = `${global_state.u2.username}'s Turn`
                         global_state.turn = 1;
                         global_state.move_count += 1;
                     }
@@ -133,6 +126,7 @@ function gamePlay() {
                         `
                     } else{ 
                         global_state.turn = 0;
+                        turn_message.innerHTML = `${global_state.u1.username}'s Turn`
                         global_state.move_count += 1;
                     }
                 }

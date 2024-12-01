@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <dialog id="init_dialog">
+    <!-- <dialog id="init_dialog" open>
         <form id="init_form" method="dialog">
             <div class="dg-1">
                 <input type="text" name="username" id="user1" placeholder="Player 1 Name">
@@ -26,9 +26,9 @@
             </div>
             <button id="close_dig">close</button>
         </form>
-    </dialog>
+    </dialog> -->
 
-    <div>
+    <!-- <div>
         <div class="header">
             <div class="head_join">
                     <h1>Tic Tac Toe</h1>
@@ -42,7 +42,6 @@
 
             <div>
                 <div>
-                    <button id="open_dig">Start</button>
                     <button onclick="reset()">Reset</button>
                 </div>
                 <div id="score_sheet">
@@ -50,11 +49,32 @@
             </div>
 
         </div>
+    </div> -->
 
-        <div class="bottom">
-            <h3 id="win_message">--</h3>
+    <div class="merge">
+        <div class="main">
+            <div class="header">
+                <div class="head_join">
+                        <h1>Tic Tac Toe</h1>
+                        <h3 id="turn">--</h3>
+                </div>
+            </div>
+            <div id="board" draggable="false">
+            </div>
+
+            <div class="bottom">
+                <h3 id="win_message">--</h3>
+            </div>
+        </div>
+        <div class="score">
+            <div id="score_sheet">
+            </div>
+            <div>
+                <button onclick="reset()">New Game</button>
+            </div>
         </div>
     </div>
+
 
     <script src="./script.js"></script>
 </body>
