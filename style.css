@@ -3,7 +3,10 @@ body {
     height: 100vh;
     width: 100vw;
     place-content: center;
+    background-color: #111111;
+    color: #eeeeee;
 }
+
 #init_dialog {
     display: grid;
     place-items: center;
@@ -12,9 +15,14 @@ body {
     background-color: rgba(26, 26, 26, 0.432);
 }
 
+#init_dialog.hide {
+    display: none;
+}
+
 #init_form {
-    background-color: bisque;
-    height: 40vh;
+    background-color: #111111;
+    color: #eeeeee;
+    height: 60vh;
     width: 50vw;
     display: grid;
     grid-template-rows: auto auto auto;
@@ -22,11 +30,22 @@ body {
     place-items: center;
 }
 
+#init_form input {
+    height: 5vh;
+}
+
+.header {
+    margin-bottom: 15px;
+}
+
+#close_dig {
+    width: 10vw;
+    font-size: 1.25em;
+}
 .merge {
     display: flex;
     column-gap: 1vw;
 }
-
 
 .main {
     display: grid;
@@ -34,11 +53,24 @@ body {
     text-align: center;
 }
 
+#div_btn {
+    display: flex;
+    gap: 10px;
+}
+
 .score {
-    border: 2px solid black;
+    border: 2px solid #eeeeee;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
     height:fit-content;
     padding: 30px;
     min-width: 15vw;
+}
+
+.removeBod {
+    border: none;
 }
 
 
@@ -48,11 +80,12 @@ body {
     display: grid;
     grid-template-columns: 15vw 15vw 15vw;
     grid-template-rows: 25vh 25vh 25vh;
+    /* box-shadow: inset 0 0 50px #8ea9f4; */
 }
 
 .box {
-    background-color: bisque;
-    border: 1px solid black;
+    /* background-color: bisque; */
+    border: 1px solid #d4d4d4;
     border-radius: 7px;
     display: flex;
     justify-content: center;
@@ -61,11 +94,56 @@ body {
     cursor: pointer;
 }
 
+.box.p1 {
+    box-shadow: inset 0 0 50px #5784ff;
+}
+
+.box.p2 {
+    box-shadow: inset 0 0 50px rgb(247, 54, 54);
+}
+
+
 .box.taken {
     pointer-events: none;
 }
 
+.bottom {
+    margin-top: 15px;
+}
+
 @media only screen and (max-width: 900px) {
+    #init_form {
+        height: 60vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #init_form input {
+        width: 90%;
+    }
+
+    .dg_1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .dg_2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #close_dig {
+        font-size: 1em;
+        width: 90%;
+    }
+
     .merge {
         flex-direction: column-reverse;
         row-gap: 2rem;
@@ -75,5 +153,13 @@ body {
         height: 45vh;
         grid-template-columns: 30vw 30vw 30vw;
         grid-template-rows: 15vh 15vh 15vh;
+    }
+
+    .box.p1 {
+        box-shadow: inset 0 0 25px #5784ff;
+    }
+    
+    .box.p2 {
+        box-shadow: inset 0 0 25px rgb(247, 54, 54);
     }
 }
