@@ -14,19 +14,6 @@
 </head>
 
 <body>
-    <!-- <dialog id="init_dialog" open>
-        <form id="init_form" method="dialog">
-            <div class="dg-1">
-                <input type="text" name="username" id="user1" placeholder="Player 1 Name">
-                <input type="text" name="symbol" id="symbol1" placeholder="Player 1 Symbol">
-            </div>
-            <div class="dg-2">
-                <input type="text" name="username" id="user2" placeholder="Player 2 Name">
-                <input type="text" name="symbol" id="symbol2" placeholder="Player 2 Symbol">
-            </div>
-            <button id="close_dig">close</button>
-        </form>
-    </dialog> -->
 
     <!-- <div>
         <div class="header">
@@ -51,11 +38,28 @@
         </div>
     </div> -->
 
+    <dialog id="init_dialog" open>
+        <form id="init_form" method="dialog">
+            <h1>Start Game</h1>
+            <div class="dg-1">
+                <h4>Player 1</h4>
+                <input type="text" name="username" id="user1" placeholder="Player 1 Name">
+                <input type="text" name="symbol" id="symbol1" placeholder="Player 1 Symbol">
+            </div>
+            <div class="dg-2">
+                <h4>Player 2</h4>
+                <input type="text" name="username" id="user2" placeholder="Player 2 Name">
+                <input type="text" name="symbol" id="symbol2" placeholder="Player 2 Symbol">
+            </div>
+            <button id="close_dig" class="btn btn-dark">Start</button>
+        </form>
+    </dialog>
+
     <div class="merge">
         <div class="main">
             <div class="header">
                 <div class="head_join">
-                        <h1>Tic Tac Toe</h1>
+                        <h1 id="heading">Tic Tac Toe</h1>
                         <h3 id="turn">--</h3>
                 </div>
             </div>
@@ -70,7 +74,7 @@
             <div id="score_sheet">
             </div>
             <div>
-                <button onclick="reset()">New Game</button>
+                <button id="reset_button">New Game</button>
             </div>
         </div>
     </div>
